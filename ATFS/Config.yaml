@@ -1,0 +1,73 @@
+﻿# site specific parameters
+Site:
+  SiteAlias: "dnnce.lvh.me"
+  WebsiteFolder: ""
+  BackupLogFilesTo: ""
+  HostUserName: "host"
+  DefaultPassword: "dnnhost"
+  HostDisplayName: "SuperUser Account"
+  ChildSitePrefix: "childsite"
+  IsRemoteSite: False
+  IsUpgrade: False
+  DoInstallation: False
+  UseInstallWizard: True
+  InstallationLanguage: English
+  EnableCDF: False
+  DevQualifier: "dnn_"
+
+# all time-out values are in seconds
+Settings:
+  Browser: chrome
+  ShowOnMonitor: 1
+  TestsToRun:
+    DevTestsOnly: False
+    CoverageTests: False
+    BvtTests: True
+    P1ALL: False
+    P1_Set_01: False
+    P1_Set_02: False
+    P1_Set_03: False
+    P1_Set_04: False
+    P1_Set_05: False
+    P1_Set_06: False
+    P1_Set_07: False
+    P1_Set_08: False
+    P1_Set_09: False
+    P1_Set_10: False
+    P1_Set_11: False
+    P1_Set_12: False
+    P1_Set_13: False
+    P1_Set_14: False
+    P1_Set_15: False
+    P1_Set_16: False
+    API_Set_1: False
+    API_Set_2: False
+    RegressionTests: False
+    RepeatTestsForChildSite: False
+  DevMode: True
+  HideSuggestedSelectors: False
+  DontCaptureImages: False
+  ElementTimeout:
+    Remote: 20
+    Local: 10
+  CompareTimeout:
+    Remote: 20
+    Local: 10
+  PageTimeout:
+    Remote: 90
+    Local: 45
+  WaitForInstallProgressToAppear:
+    Remote: 120
+    Local: 60
+  WaitForInstallProgressToFinish:
+    Remote: 480
+    Local: 300
+  WaitForChildSiteCreation:
+    Remote: 480
+    Local: 360
+  WaitForPageCreation:
+    Remote: 60
+    Local: 30
+  Reports:
+    Html: False
+    TeamCity: False

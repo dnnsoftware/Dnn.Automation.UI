@@ -1,0 +1,21 @@
+﻿#add lines o ignore in log file. These lines will be matched verbatim
+System.Threading.ThreadAbortException
+System.OperationCanceledException: The operation was canceled
+System.Web.HttpException (0x80004005): A potentially dangerous Request
+DotNetNuke.ComponentModel.ProviderInstaller - System.Configuration.ConfigurationErrorsException: Could not load provider DNNConnect.CKEditorProvider.CKHtmlEditorProvider, DNNConnect.CKEditorProvider
+/Install/Install.aspx' does not exist.
+/Install/InstallWizard.aspx' does not exist.
+/Install/UpgradeWizard.aspx' does not exist.
+DotNetNuke.Services.Search.Internals.LuceneControllerImpl - Search Document error:
+#deadlocked on lock resources with another process
+File Crawler Unable to Finish
+SchwabenCode.QuickIO.DirectoryNotEmptyException
+TaskCanceledException
+The provided anti-forgery token was meant for user
+System.Exception: Synchronization Error in Request
+DotNetNuke.Professional.Providers.OutputCachingProviders
+Exec dbo.AddEventLog
+Exec dbo.GetLastAppliedIteration @0, @1, @2
+DotNetNuke.Provider.Professional.FiftyOnePremiumProvider.DetectModule - System.UnauthorizedAccessException: Access to the path
+DotNetNuke.Services.Search.Internals.InternalSearchControllerImpl - Search Document error
+Too many changes at once in directory

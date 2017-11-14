@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>195812df-876f-4fa8-abba-b69b9dbf9a33</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ATFS</RootNamespace>
+    <AssemblyName>ATFS</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <Name>ATFS</Name>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <Tailcalls>false</Tailcalls>
+    <OutputPath>..\framework</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <WarningLevel>3</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DocumentationFile>
+    </DocumentationFile>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <Tailcalls>true</Tailcalls>
+    <OutputPath>..\framework</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <WarningLevel>3</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DocumentationFile>
+    </DocumentationFile>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="canopy">
+      <HintPath>..\packages\canopy.1.5.2\lib\canopy.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FSharp.Configuration">
+      <HintPath>..\packages\FSharp.Configuration.1.3.1\lib\net45\FSharp.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FSharp.Core">
+      <HintPath>..\packages\FSharp.Core.4.2.3\lib\net45\FSharp.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FSharp.Data">
+      <HintPath>..\packages\FSharp.Data.2.4.2\lib\net45\FSharp.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Hopac">
+      <HintPath>..\packages\Hopac.0.3.23\lib\net45\Hopac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Hopac.Core">
+      <HintPath>..\packages\Hopac.0.3.23\lib\net45\Hopac.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Hopac.Platform">
+      <HintPath>..\packages\Hopac.0.3.23\lib\net45\Hopac.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HttpFs">
+      <HintPath>..\packages\Http.fs.4.1.2\lib\net40\HttpFs.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SharpYaml">
+      <HintPath>..\packages\FSharp.Configuration.1.3.1\lib\net45\SharpYaml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SizSelCsZzz">
+      <HintPath>..\packages\SizSelCsZzz.0.3.36.0\lib\SizSelCsZzz.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.ValueTuple">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net461\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebDriver">
+      <HintPath>..\packages\Selenium.WebDriver.3.6.0\lib\net45\WebDriver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebDriver.Support">
+      <HintPath>..\packages\Selenium.Support.3.6.0\lib\net45\WebDriver.Support.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsInput">
+      <HintPath>..\packages\InputSimulator.1.0.4.0\lib\net20\WindowsInput.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="App.config" />
+    <Compile Include="AssemblyInfo.fs" />
+    <Content Include="Config.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Compile Include="SystemExtensions.fs" />
+    <Compile Include="Check.fs" />
+    <Compile Include="Helpers.fs" />
+    <Compile Include="InputSimulatorHelper.fs" />
+    <Compile Include="CanopyExtensions.fs" />
+    <Content Include="IngoredLogErrors.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Compile Include="DnnCore\DnnConstants.fs" />
+    <Compile Include="DnnCore\DnnTypes.fs" />
+    <Compile Include="DnnCore\DnnSettings.fs" />
+    <Compile Include="DnnCore\DnnConfig.fs" />
+    <Compile Include="DnnCore\DnnSiteLog.fs" />
+    <Compile Include="DnnCore\DnnCanopyContext.fs" />
+    <Compile Include="DnnCore\DnnPBConfig.fs" />
+    <Compile Include="DnnCore\DnnCommon.fs" />
+    <Compile Include="DnnCore\DnnCommonPB.fs" />
+    <Compile Include="DnnCore\DnnUserLogin.fs" />
+    <Compile Include="DnnCore\DnnWebApi.fs" />
+    <Compile Include="DnnCore\DnnSiteSetup.fs" />
+    <Compile Include="DnnCore\DnnUserProfile.fs" />
+    <Compile Include="DnnCore\DnnSiteCreate.fs" />
+    <Compile Include="DnnCore\DnnRoles.fs" />
+    <Compile Include="DnnCore\DnnAddUser.fs" />
+    <Compile Include="DnnCore\DnnAddToRole.fs" />
+    <Compile Include="DnnCore\DnnHost.fs" />
+    <Compile Include="DnnCore\DnnExtensions.fs" />
+    <Compile Include="DnnCore\DnnAdmin.fs" />
+    <Compile Include="DnnCore\DnnSiteSettings.fs" />
+    <Compile Include="DnnCore\DnnDAM.fs" />
+    <Compile Include="DnnCore\DnnManager.fs" />
+    <Compile Include="DnnCore\DnnVisitPages.fs" />
+    <Compile Include="DnnCore\DnnPageSettings.fs" />
+    <Compile Include="DnnCore\DnnCreatePage.fs" />
+    <Compile Include="DnnCore\DnnAddModuleToPage.fs" />
+    <Compile Include="DnnCore\DnnScheduler.fs" />
+    <Compile Include="DnnCore\DnnHtmlModule.fs" />
+    <Compile Include="DnnCore\DnnMvcSpa.fs" />
+    <Compile Include="DnnCore\DnnSecurityAnalyzer.fs" />
+    <Compile Include="DnnCore\DnnPBPageTemplate.fs" />
+    <Compile Include="DnnCore\DnnRecycleBin.fs" />
+    <Compile Include="DnnCore\DnnPrompt.fs" />
+    <Compile Include="DnnCore\DnnConnector.fs" />
+    <Compile Include="DnnCore\DnnPages.fs" />
+    <Compile Include="TestCases\InstallationTests.fs" />
+    <Compile Include="TestCases\CreateChildSiteTest.fs" />
+    <Compile Include="TestCases\LogFileTest.fs" />
+    <Compile Include="TestCases\BVTs\LoginTests.fs" />
+    <Compile Include="TestCases\BVTs\RegistrationTests.fs" />
+    <Compile Include="TestCases\BVTs\InspectPagesTests.fs" />
+    <Compile Include="TestCases\BVTs\CreatePagesTests.fs" />
+    <Compile Include="TestCases\BVTs\PersonaBarUITests.fs" />
+    <Compile Include="TestCases\BVTs\SecurityAnalyzer.fs" />
+    <Compile Include="TestCases\BVTs\Experimental.fs" />
+    <Compile Include="TestCases\Community\PlaceHolder.fs" />
+    <Compile Include="TestCases\P1Tests\AddModulesToPageTest.fs" />
+    <Compile Include="TestCases\P1Tests\AddUsersToRoles.fs" />
+    <Compile Include="TestCases\P1Tests\CreatePagesExtraTests.fs" />
+    <Compile Include="TestCases\P1Tests\DAM.fs" />
+    <Compile Include="TestCases\P1Tests\ExportImport.fs" />
+    <Compile Include="TestCases\P1Tests\HtmlModule.fs" />
+    <Compile Include="TestCases\P1Tests\Modules.fs" />
+    <Compile Include="TestCases\P1Tests\MvcSpaModules.fs" />
+    <Compile Include="TestCases\P1Tests\PageSettingsTests.fs" />
+    <Compile Include="TestCases\P1Tests\PBConnectors.fs" />
+    <Compile Include="TestCases\P1Tests\PBPages.fs" />
+    <Compile Include="TestCases\P1Tests\PBRoles.fs" />
+    <Compile Include="TestCases\P1Tests\PBTools.fs" />
+    <Compile Include="TestCases\P1Tests\RecycleBin.fs" />
+    <Compile Include="TestCases\P1Tests\Prompt.fs" />
+    <Compile Include="TestCases\P1Tests\Scheduler.fs" />
+    <Compile Include="TestCases\P1Tests\Search.fs" />
+    <Compile Include="TestCases\P1Tests\SiteSettings.fs" />
+    <Compile Include="TestCases\P1Tests\UserProfile.fs" />
+    <Compile Include="TestCases\P1Tests\UserRegistration.fs" />
+    <Compile Include="TestCases\RegressionTests\SupportIssues.fs" />
+    <Compile Include="TestCases\WebAPI\APIData.fs" />
+    <Compile Include="TestCases\WebAPI\APIHelpers.fs" />
+    <Compile Include="TestCases\WebAPI\WebAPI-BVT.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+  <PropertyGroup>
+    <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
+  </PropertyGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '11.0'">
+      <PropertyGroup>
+        <FSharpTargetsPath>$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets</FSharpTargetsPath>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup>
+        <FSharpTargetsPath>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\FSharp\Microsoft.FSharp.Targets</FSharpTargetsPath>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
+  <Import Project="$(FSharpTargetsPath)" Condition="Exists('$(FSharpTargetsPath)')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
