@@ -41,7 +41,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="canopy">
-      <HintPath>..\packages\canopy.1.5.2\lib\canopy.dll</HintPath>
+      <HintPath>..\packages\canopy.1.6.1\lib\canopy.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="FSharp.Configuration">
@@ -100,11 +100,11 @@
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="WebDriver">
-      <HintPath>..\packages\Selenium.WebDriver.3.6.0\lib\net45\WebDriver.dll</HintPath>
+      <HintPath>..\packages\Selenium.WebDriver.3.7.0\lib\net45\WebDriver.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WebDriver.Support">
-      <HintPath>..\packages\Selenium.Support.3.6.0\lib\net45\WebDriver.Support.dll</HintPath>
+      <HintPath>..\packages\Selenium.Support.3.7.0\lib\net45\WebDriver.Support.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WindowsInput">
