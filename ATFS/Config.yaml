@@ -44,7 +44,7 @@ Settings:
     API_Set_2: False
     RegressionTests: False
     RepeatTestsForChildSite: False
-  DevMode: True
+  DiagMode: False
   HideSuggestedSelectors: False
   DontCaptureImages: False
   ElementTimeout:

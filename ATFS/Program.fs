@@ -68,7 +68,7 @@ let loadBrowser() =
             // chrome runs the tests much faster than firefox but has some elements clicking issues
             canopy.configuration.chromeDir <- exeLocation
             let options = Chrome.ChromeOptions()
-            if not(config.Settings.DevMode) then
+            if not(config.Settings.DiagMode) then
                 options.AddArguments("--kiosk")
             let brwzr = ChromeWithOptionsAndTimeSpan(options, TimeSpan.FromMinutes(3.))
             start brwzr
@@ -115,7 +115,7 @@ let loadBrowser() =
                 let width = Math.Max(Math.Min(size.Width, 1400), 1000)
                 let height = Math.Max(Math.Min(size.Height, 1000), 800)
                 resize (width, height)
-        elif config.Settings.DevMode then
+        elif config.Settings.DiagMode then
             pin FullScreen
             // F11 will not have effect unless the browser is the focused window
             InputSimulatorHelper.pressF11()

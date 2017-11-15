@@ -33,9 +33,8 @@ let private upgradeStr = if config.Site.IsUpgrade then "upgrade" else "new"
 let mutable isChildSiteContext = false
 
 let (@@@) =
-    //if config.Settings.DevMode then (&&&&) //highlights elements
-    //else (&&&)
-    (&&&)
+    if config.Settings.DiagMode then (&&&&) //highlights elements
+    else (&&&)
 
 let context name =
     let testFor = if isChildSiteContext then "CHILD" else "MAIN"

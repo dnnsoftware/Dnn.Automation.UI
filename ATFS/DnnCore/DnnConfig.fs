@@ -60,7 +60,7 @@ let installationLanguage : InstallationLanguageas =
 // this should be set at the beginning to define what we are testing
 let siteSettings = ProductSettings().init ""
 
-if config.Settings.DevMode then canopy.configuration.wipSleep <- 0.2
+if config.Settings.DiagMode then canopy.configuration.wipSleep <- 0.4
 
 // canopy configurations (timeouts and others as set in from YAML configuration file)
 canopy.configuration.elementTimeout <- if isRemoteSite then (float config.Settings.ElementTimeout.Remote)
