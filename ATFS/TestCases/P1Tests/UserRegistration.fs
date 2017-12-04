@@ -44,7 +44,7 @@ let testRegistrationSucceeded ( username : string ) ( pwd : string ) =
     if not (existsAndVisible userDisplayNameSelector) then failwith "User Registration failed."
 
 /// <summary>Testcase helper for to verify the Required Validators and Password Strength Meter exist on User Registration Form</summary>
-let private testUserRegistrationFormUI()=
+let private testPositiveUserRegistrationFormUI()=
     logOff()
     clickDnnPopupLink siteSettings.registerLinkId
     click registerNewUserBtn
@@ -60,11 +60,38 @@ let private testUserRegistrationFormUI()=
         failwith "  FAIL: Password Strength Meter is missing on the User Registration Form"
     closePopup()
 
-let UITests _ =
-    context "Registering a User: UI Tests"
+let PositiveUITests _ =
+    context "Registering a User: Positive UI Tests"
 
-    "Registering a User UI Test | Verify Validators and Password Strength Meter exist" @@@ fun _ ->
-        testUserRegistrationFormUI()
+    "Registering a User Pisitive UI Test | Verify Validators and Password Strength Meter exist" @@@ fun _ ->
+        testPositiveUserRegistrationFormUI()
+
+let NegativeUITests _ =
+    context "Registering a User: Negative UI Tests"
+
+    "Registering a User Negative UI Test | Verify Invalid Name Is Not Passed" @@@ fun _ ->
+        logOff()
+        clickDnnPopupLink "#dnn_dnnUser_enhancedRegisterLink"
+        let inputs = element "#dnn_ctr_Register_userForm" |> elementsWithin "input"
+        let name = "malicioususer" +  getRandomId()
+        inputs.Item(0) << name + "<script>alert(1)</script>" // username
+        inputs.Item(1) << config.Site.DefaultPassword
+        inputs.Item(2) << config.Site.DefaultPassword
+        inputs.Item(3) << name
+        inputs.Item(4) << name + "@dnndev.me"
+        click "#dnn_ctr_Register_registerButton"
+        waitPageLoad()
+        // once this is translated, we need to change this
+        let errorText = 
+            match installationLanguage with
+            | English -> "The username specified is invalid.  Please specify a valid username."
+            | German  -> "Der angegebene Benutzername ist ungültig, bitte geben Sie einen gültigen Benutzernamen an."
+            | Spanish -> "El nombre de usuario no es correcto. Especifique un nombre de usuario válido."
+            | French  -> "Compte utilisateur incorrect. Veuillez fournir un compte valide."
+            | Italian -> "Il nome utente specificato non è valido. Si prega di fornire un account valido."
+            | Dutch   -> "De gebruikersnaam is niet correct. Voer alstublieft een correcte gebruikersnaam in."
+        displayed ( sprintf "#dnn_ctr_ctl01_dnnSkinMessage > span:contains(%s)" errorText )
+        ()
 
 let privateReg _ =
     context "Registering a User: Private Registration"
@@ -222,7 +249,8 @@ let verifiedReg _ =
         changeUserRegistrationType UserRegistrationType.PRIVATE
 
 let all _ =
-    UITests()
+    PositiveUITests()
+    NegativeUITests()
     privateReg()
     publicReg()
     verifiedReg()
